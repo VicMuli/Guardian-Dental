@@ -36,7 +36,7 @@ const Hero = () => (
           <div className="flex items-center gap-8 pt-4">
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map(i => (
-                <img key={i} src={"https://drive.google.com/thumbnail?id=1223HuUzVR8lMv5LNMOtfZZ-xHIa5OZr5&sz=w1000"} alt="Patient" className="w - 10 h - 10 rounded - full border - 2 border - white" />
+                <img key={i} src="https://drive.google.com/thumbnail?id=1223HuUzVR8lMv5LNMOtfZZ-xHIa5OZr5&sz=w1000" alt="Patient" className="w-10 h-10 rounded-full border-2 border-white" />
               ))}
               <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 border-2 border-white">+2k</div>
             </div>

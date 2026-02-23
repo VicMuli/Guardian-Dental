@@ -51,7 +51,7 @@ const Hero = () => (
         <div className="lg:w-1/2 relative">
           <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://drive.google.com/thumbnail?id=1zuuZmqJhGyT9Gh9k8fbFd7vGyRkKpBZ_&sz=w1000"
+              src="https://drive.google.com/thumbnail?id=1223HuUzVR8lMv5LNMOtfZZ-xHIa5OZr5&sz=w1000"
               alt="Happy patient with dentist"
               className="w-full h-auto object-cover"
             />

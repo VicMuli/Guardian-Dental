@@ -16,43 +16,43 @@ const Hero = () => (
             <span className="text-primary-600">Top Priority</span>
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
-            Experience world-class dental care with our team of experts. 
+            Experience world-class dental care with our team of experts.
             We use the latest technology to ensure your treatment is pain-free and effective.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link 
-              to="/book" 
+            <Link
+              to="/book"
               className="bg-primary-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/30 text-center"
             >
               Book an Appointment
             </Link>
-            <Link 
-              to="/services" 
+            <Link
+              to="/services"
               className="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 transition-all text-center flex items-center justify-center gap-2"
             >
               View Services <ArrowRight size={18} />
             </Link>
           </div>
           <div className="flex items-center gap-8 pt-4">
-             <div className="flex -space-x-3">
-               {[1,2,3,4].map(i => (
-                 <img key={i} src={`https://picsum.photos/100/100?random=${i+10}`} alt="Patient" className="w-10 h-10 rounded-full border-2 border-white" />
-               ))}
-               <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 border-2 border-white">+2k</div>
-             </div>
-             <div>
-               <p className="text-sm font-bold text-slate-900">2,000+ Happy Patients</p>
-               <div className="flex text-yellow-400 text-xs">
-                 {[1,2,3,4,5].map(i => <Star key={i} size={12} fill="currentColor" />)}
-               </div>
-             </div>
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4].map(i => (
+                <img key={i} src={"https://drive.google.com/thumbnail?id=1223HuUzVR8lMv5LNMOtfZZ-xHIa5OZr5&sz=w1000"} alt="Patient" className="w - 10 h - 10 rounded - full border - 2 border - white" />
+              ))}
+              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 border-2 border-white">+2k</div>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-slate-900">2,000+ Happy Patients</p>
+              <div className="flex text-yellow-400 text-xs">
+                {[1, 2, 3, 4, 5].map(i => <Star key={i} size={12} fill="currentColor" />)}
+              </div>
+            </div>
           </div>
         </div>
         <div className="lg:w-1/2 relative">
           <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src= "https://drive.google.com/thumbnail?id=1zuuZmqJhGyT9Gh9k8fbFd7vGyRkKpBZ_&sz=w1000"
-              alt="Happy patient with dentist" 
+            <img
+              src="https://drive.google.com/thumbnail?id=1zuuZmqJhGyT9Gh9k8fbFd7vGyRkKpBZ_&sz=w1000"
+              alt="Happy patient with dentist"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -100,7 +100,7 @@ const AboutPreview = () => (
         <span className="text-primary-600 font-bold uppercase tracking-wider text-sm">About Us</span>
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Dedicated to the Health of Your Smile</h2>
         <p className="text-slate-600 leading-relaxed text-lg">
-          At Guardian Dental, we believe that a healthy smile is the foundation of a happy life. 
+          At Guardian Dental, we believe that a healthy smile is the foundation of a happy life.
           Founded in 2010, our clinic has served over 15,000 patients with compassion and excellence.
         </p>
         <ul className="space-y-4">
@@ -130,37 +130,37 @@ const Testimonials = () => (
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
-          { 
-            name: "Wanjiku Mwangi", 
-            role: "Teacher", 
+          {
+            name: "Wanjiku Mwangi",
+            role: "Teacher",
             text: "The best dental experience I've ever had. The staff is incredibly friendly and Dr. Rahul is a genius!",
             image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=80"
           },
-          { 
-            name: "Juma Otieno", 
-            role: "Engineer", 
+          {
+            name: "Juma Otieno",
+            role: "Engineer",
             text: "I was afraid of dentists until I came here. The pain-free procedures completely changed my perspective.",
             image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=150&q=80"
           },
-          { 
-            name: "Amina Abdi", 
-            role: "Designer", 
+          {
+            name: "Amina Abdi",
+            role: "Designer",
             text: "State of the art facility and very professional service. Highly recommend Guardian Dental to everyone.",
             image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=150&q=80"
           }
         ].map((t, idx) => (
           <div key={idx} className="bg-slate-50 p-8 rounded-2xl relative">
-             <div className="flex text-yellow-400 mb-4">
-               {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" />)}
-             </div>
-             <p className="text-slate-700 italic mb-6">"{t.text}"</p>
-             <div className="flex items-center gap-4">
-               <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
-               <div>
-                 <h4 className="font-bold text-slate-900">{t.name}</h4>
-                 <span className="text-xs text-slate-500 uppercase">{t.role}</span>
-               </div>
-             </div>
+            <div className="flex text-yellow-400 mb-4">
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} fill="currentColor" />)}
+            </div>
+            <p className="text-slate-700 italic mb-6">"{t.text}"</p>
+            <div className="flex items-center gap-4">
+              <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <h4 className="font-bold text-slate-900">{t.name}</h4>
+                <span className="text-xs text-slate-500 uppercase">{t.role}</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -173,7 +173,7 @@ const CTA = () => (
     <div className="container mx-auto px-4 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Brighten Your Smile?</h2>
       <p className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
-        Book an appointment today and take the first step towards a healthier, happier you. 
+        Book an appointment today and take the first step towards a healthier, happier you.
         We offer flexible scheduling to fit your busy life.
       </p>
       <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -190,12 +190,12 @@ const CTA = () => (
 
 const MapSection = () => (
   <section className="h-[400px] w-full relative bg-slate-200">
-    <iframe 
-      width="100%" 
-      height="100%" 
-      style={{ border: 0 }} 
-      allowFullScreen 
-      loading="lazy" 
+    <iframe
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
       src="https://maps.google.com/maps?q=Wemmah%20House%2C%201st%20Floor%20Limuru%20Rd%2C%20Ruaka%20(Guardian%20Dental%20Clinic)&t=&z=15&ie=UTF8&iwloc=B&output=embed"
       title="Guardian Dental Location"

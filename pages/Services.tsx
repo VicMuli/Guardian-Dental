@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Smile, Zap, Activity, HeartPulse, Search, Baby, ArrowRight } from 'lucide-react';
 import { ServiceItem } from '../types';
+import { useScrollAnimation } from '../components/useScrollAnimation';
+import TypewriterText from '../components/TypewriterText';
 
 const services: ServiceItem[] = [
   {
@@ -37,11 +39,20 @@ const services: ServiceItem[] = [
 ];
 
 const Services = () => {
+  const gridRef = useScrollAnimation<HTMLDivElement>();
+  const processHeaderRef = useScrollAnimation<HTMLDivElement>();
+  const stepsRef = useScrollAnimation<HTMLDivElement>();
+
   return (
     <div className="bg-white">
       <div className="bg-primary-50 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Our Services</h1>
+          <TypewriterText
+            text="Our Services"
+            as="h1"
+            speed={55}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+          />
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Comprehensive dental solutions designed to meet your unique needs.
           </p>
@@ -50,7 +61,7 @@ const Services = () => {
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-hidden">
             {services.map((service, idx) => (
               <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mb-6">
@@ -60,8 +71,8 @@ const Services = () => {
                 <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                   {service.description}
                 </p>
-                <Link 
-                  to="/book" 
+                <Link
+                  to="/book"
                   className="inline-flex items-center text-primary-600 font-bold hover:text-primary-700 transition-colors group mt-auto"
                 >
                   Book Now <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -75,11 +86,16 @@ const Services = () => {
       {/* Process Section */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900">How It Works</h2>
+          <div ref={processHeaderRef} className="text-center mb-16 scroll-hidden">
+            <TypewriterText
+              text="How It Works"
+              as="h2"
+              speed={55}
+              className="text-3xl font-bold text-slate-900"
+            />
             <p className="text-slate-600 mt-2">Your journey to a better smile in 3 simple steps</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative">
+          <div ref={stepsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative scroll-hidden">
             {/* Connecting Line (Desktop only) */}
             <div className="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 bg-slate-200 -z-0"></div>
 

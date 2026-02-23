@@ -41,38 +41,37 @@
       font-family: 'Inter', sans-serif;
     }
 
-    /* Scroll animation base states */
+    /* ── Scroll animation base states ── */
     .scroll-hidden {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
     .scroll-hidden-left {
       opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      transform: translateX(-60px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
     .scroll-hidden-right {
       opacity: 0;
-      transform: translateX(50px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      transform: translateX(60px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
     .scroll-hidden-scale {
       opacity: 0;
       transform: scale(0.92);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
-    /* Visible state — added by Intersection Observer */
     .scroll-visible {
       opacity: 1 !important;
       transform: none !important;
     }
 
-    /* Staggered children delay helpers */
+    /* ── Stagger delay helpers ── */
     .delay-100 {
       transition-delay: 0.1s;
     }
@@ -91,6 +90,42 @@
 
     .delay-500 {
       transition-delay: 0.5s;
+    }
+
+    /* ── Slow image reveal: blur + fade + slight zoom ── */
+    .img-reveal {
+      opacity: 0;
+      filter: blur(12px);
+      transform: scale(1.04);
+      transition: opacity 1.4s ease-out, filter 1.4s ease-out, transform 1.4s ease-out;
+    }
+
+    .img-reveal.scroll-visible {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1);
+    }
+
+    /* ── Typewriter cursor blink ── */
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      background: currentColor;
+      margin-left: 2px;
+      vertical-align: baseline;
+      animation: blink 0.8s step-end infinite;
     }
   </style>
   <script type="importmap">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, User, FileText, MessageCircle } from 'lucide-react';
 import clsx from 'clsx';
+import TypewriterText from '../components/TypewriterText';
 
 const BookAppointment = () => {
   const navigate = useNavigate();
@@ -37,9 +38,9 @@ const BookAppointment = () => {
       `*Notes:* ${formData.notes}`;
 
     // Use the provided number converted to international format (Kenya)
-    const phoneNumber = "254791281264"; 
+    const phoneNumber = "254791281264";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    
+
     window.open(whatsappUrl, '_blank');
     setStep(3);
   };
@@ -50,7 +51,7 @@ const BookAppointment = () => {
         <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
           {/* Header */}
           <div className="bg-primary-600 p-8 text-center text-white">
-            <h1 className="text-3xl font-bold mb-2">Book Your Appointment</h1>
+            <TypewriterText text="Book Your Appointment" as="h1" speed={50} className="text-3xl font-bold mb-2" />
             <p className="text-primary-100">Schedule a visit with our expert dentists in just a few steps.</p>
           </div>
 
@@ -72,10 +73,10 @@ const BookAppointment = () => {
             <div className="p-8 md:p-12 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><FileText size={16}/> Select Service</label>
-                  <select 
-                    name="service" 
-                    value={formData.service} 
+                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><FileText size={16} /> Select Service</label>
+                  <select
+                    name="service"
+                    value={formData.service}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                   >
@@ -87,10 +88,10 @@ const BookAppointment = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><User size={16}/> Preferred Doctor</label>
-                  <select 
-                    name="doctor" 
-                    value={formData.doctor} 
+                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><User size={16} /> Preferred Doctor</label>
+                  <select
+                    name="doctor"
+                    value={formData.doctor}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                   >
@@ -105,19 +106,19 @@ const BookAppointment = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><Calendar size={16}/> Preferred Date</label>
-                  <input 
-                    type="date" 
+                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><Calendar size={16} /> Preferred Date</label>
+                  <input
+                    type="date"
                     name="date"
                     min={new Date().toISOString().split('T')[0]}
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900" 
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><Clock size={16}/> Preferred Time</label>
-                  <select 
+                  <label className="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"><Clock size={16} /> Preferred Time</label>
+                  <select
                     name="time"
                     value={formData.time}
                     onChange={handleChange}
@@ -135,8 +136,8 @@ const BookAppointment = () => {
               </div>
 
               <div className="pt-6 flex justify-end">
-                <button 
-                  onClick={nextStep} 
+                <button
+                  onClick={nextStep}
                   className="bg-primary-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-primary-700 transition-colors"
                 >
                   Next Step
@@ -151,23 +152,23 @@ const BookAppointment = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900" 
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900" 
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -175,37 +176,37 @@ const BookAppointment = () => {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900" 
+                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Additional Notes (Optional)</label>
-                <textarea 
+                <textarea
                   rows={3}
                   name="notes"
                   value={formData.notes}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900" 
+                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all bg-white text-slate-900"
                   placeholder="Any specific concerns or medical history..."
                 ></textarea>
               </div>
 
               <div className="pt-6 flex justify-between">
-                <button 
-                  onClick={prevStep} 
+                <button
+                  onClick={prevStep}
                   className="text-slate-500 font-bold px-8 py-3 hover:text-slate-700 transition-colors"
                 >
                   Back
                 </button>
-                <button 
-                  onClick={completeBooking} 
+                <button
+                  onClick={completeBooking}
                   className="bg-[#25D366] text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg shadow-green-500/20"
                 >
                   <MessageCircle size={20} />
@@ -226,13 +227,13 @@ const BookAppointment = () => {
                 We've prepared a message with your appointment details. Please send it to our WhatsApp number to finalize your booking with our receptionist.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                 <button 
+                <button
                   onClick={() => navigate('/')}
                   className="bg-slate-100 text-slate-700 px-8 py-3 rounded-lg font-bold hover:bg-slate-200 transition-colors"
                 >
                   Return Home
                 </button>
-                <button 
+                <button
                   onClick={() => {
                     const message = `*New Appointment Request*\n\n` +
                       `*Service:* ${formData.service}\n` +

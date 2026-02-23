@@ -1,6 +1,8 @@
 import React from 'react';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 import { Doctor } from '../types';
+import { useScrollAnimation } from '../components/useScrollAnimation';
+import TypewriterText from '../components/TypewriterText';
 
 const doctors: Doctor[] = [
   {
@@ -34,11 +36,19 @@ const doctors: Doctor[] = [
 ];
 
 const Team = () => {
+  const gridRef = useScrollAnimation<HTMLDivElement>();
+  const ctaRef = useScrollAnimation<HTMLDivElement>();
+
   return (
     <div className="bg-white">
       <div className="bg-primary-50 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Meet Our Specialists</h1>
+          <TypewriterText
+            text="Meet Our Specialists"
+            as="h1"
+            speed={55}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+          />
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Our team of experienced dentists and hygienists is here to ensure you receive the best possible care.
           </p>
@@ -47,14 +57,14 @@ const Team = () => {
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 scroll-hidden">
             {doctors.map((doctor) => (
               <div key={doctor.id} className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={doctor.image} 
-                    alt={doctor.name} 
-                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" 
+                  <img
+                    src={doctor.image}
+                    alt={doctor.name}
+                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110 img-reveal scroll-visible"
                   />
                   <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/60 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <div className="flex space-x-4">
@@ -77,8 +87,13 @@ const Team = () => {
 
       {/* Join Team CTA */}
       <section className="py-20 bg-slate-900 text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">Are you a dental professional?</h2>
+        <div ref={ctaRef} className="container mx-auto px-4 scroll-hidden-scale">
+          <TypewriterText
+            text="Are you a dental professional?"
+            as="h2"
+            speed={45}
+            className="text-3xl font-bold mb-4"
+          />
           <p className="text-slate-400 mb-8 max-w-xl mx-auto">
             We are always looking for talented individuals to join our growing team. Check out our career opportunities.
           </p>

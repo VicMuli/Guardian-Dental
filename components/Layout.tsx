@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Team', href: '/team' },
   { label: 'Blog', href: '/blog' },
   { label: 'Podcasts', href: '/podcasts' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 

@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import BookAppointment from './pages/BookAppointment';
 import Blog from './pages/Blog';
+import Podcasts from './pages/Podcasts';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -32,6 +33,7 @@ const App: React.FC = () => {
           <Route path="/book" element={<BookAppointment />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<Blog />} />
+          <Route path="/podcasts" element={<Podcasts />} />
         </Routes>
       </Layout>
     </HashRouter>

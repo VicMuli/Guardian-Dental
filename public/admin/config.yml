@@ -4,7 +4,6 @@ backend:
   branch: main
   auth_type: pkce
   app_id: Ov23li7WDVUp7IQ4w7tB
-  base_url: https://github.com
 
 site_url: https://guardian-dental.vercel.app
 

@@ -6,8 +6,9 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-# Site URL (update this to match your deployed URL)
-site_url: https://guardian-dental.netlify.app
+# TODO: Set this to your deployed site URL after publishing to Netlify
+# Example: site_url: https://your-site-name.netlify.app
+# site_url: https://your-site-name.netlify.app
 
 # Editor workflow (optional: enables draft/review/ready states)
 # publish_mode: editorial_workflow

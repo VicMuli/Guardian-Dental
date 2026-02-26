@@ -5,14 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guardian Dental | Content Manager</title>
-    <!-- Include the Decap CMS script -->
+    <!-- Disable automatic initialization and mount manually -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>window.CMS_MANUAL_INIT = true;</script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 
 <body>
-    <div id="nc-root"></div>
+    <!-- Decap CMS mounts here automatically if nc-root exists -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.CMS) {
+                window.CMS.init();
+            }
+        });
+    </script>
 </body>
 
 </html>

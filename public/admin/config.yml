@@ -1,0 +1,176 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files will be stored in /public/uploads
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Site URL (update this to match your deployed URL)
+site_url: https://guardian-dental.netlify.app
+
+# Editor workflow (optional: enables draft/review/ready states)
+# publish_mode: editorial_workflow
+
+collections:
+  # ── BLOG ──────────────────────────────────────────────────────────────────
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The main headline for this blog post."
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Recommended size: 1200×630 px."
+
+      - label: "Summary"
+        name: "description"
+        widget: "text"
+        hint: "Short description shown in the blog listing card (1–2 sentences)."
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Comma-separated tags, e.g. oral-health, cosmetic-dentistry."
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Guardian Dental Team"
+        required: false
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # ── PODCASTS ──────────────────────────────────────────────────────────────
+  - name: "podcasts"
+    label: "Podcasts"
+    folder: "content/podcasts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Episode Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+
+      - label: "Episode Number"
+        name: "episode"
+        widget: "number"
+        required: false
+        hint: "Optional episode number."
+
+      - label: "Cover Art"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Square cover image (min 1400×1400 px for podcast directories)."
+
+      - label: "Audio File"
+        name: "audio"
+        widget: "file"
+        required: true
+        hint: "Upload an MP3 or M4A audio file."
+        media_library:
+          config:
+            multiple: false
+
+      - label: "Duration"
+        name: "duration"
+        widget: "string"
+        required: false
+        hint: "Formatted as MM:SS or HH:MM:SS."
+
+      - label: "Summary"
+        name: "description"
+        widget: "text"
+        hint: "Short description shown in the episodes list."
+
+      - label: "Show Notes"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Full show notes with links, timestamps, etc."
+
+      - label: "Guest"
+        name: "guest"
+        widget: "string"
+        required: false
+
+  # ── GALLERY ───────────────────────────────────────────────────────────────
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Collection Title"
+        name: "title"
+        widget: "string"
+        hint: "E.g. 'Before & After', 'Clinic Tour', 'Team Photos'."
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Before & After", value: "before-after" }
+          - { label: "Clinic Tour",    value: "clinic-tour" }
+          - { label: "Team Photos",    value: "team-photos" }
+          - { label: "Events",         value: "events" }
+          - { label: "General",        value: "general" }
+        default: "general"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 0
+        required: false
+        hint: "Lower numbers appear first."
+
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        label_singular: "Image"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            hint: "Recommended: at least 800×600 px."
+
+          - label: "Caption"
+            name: "caption"
+            widget: "string"
+            required: false
+
+          - label: "Alt Text"
+            name: "alt"
+            widget: "string"
+            hint: "Describe the image for accessibility."

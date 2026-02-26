@@ -1,7 +1,11 @@
 backend:
-  name: git-gateway
-  repo:VicMuli/Guardian-Dental
+  name: github
+  repo: VicMuli/Guardian-Dental
   branch: main
+  auth_type: pkce
+  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID
+
+site_url: https://guardian-dental.vercel.app
 
 # Media files will be stored in /public/uploads
 media_folder: "public/uploads"

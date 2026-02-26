@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo:VicMuli/Guardian-Dental
   branch: main
 
 # Media files will be stored in /public/uploads

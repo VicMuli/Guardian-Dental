@@ -12,7 +12,7 @@ const puppeteer = require('puppeteer');
 
     try {
         console.log('Navigating...');
-        await page.goto('https://guardian-dental.vercel.app/admin/', { waitUntil: 'networkidle2', timeout: 30000 });
+        await page.goto('https://guardiandental.netlify.app/admin/', { waitUntil: 'networkidle2', timeout: 30000 });
         console.log('Taking screenshot...');
         await page.screenshot({ path: 'screenshot.png' });
         console.log('Done.');

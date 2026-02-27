@@ -52,7 +52,7 @@ const GuardianChat = () => {
     const toggleChat = () => setIsOpen(!isOpen);
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 font-sans">
+        <div className="fixed bottom-6 left-6 z-50 font-sans">
             {/* Chat Window */}
             {isOpen && (
                 <div className="bg-white rounded-2xl shadow-2xl w-80 mb-4 overflow-hidden border border-gray-100 flex flex-col transition-all duration-300">

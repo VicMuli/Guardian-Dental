@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: VicMuli/Guardian-Dental
+  name: git-gateway
   branch: main
-  auth_type: pkce
-  app_id: Ov23li7WDVUp7IQ4w7tB
 
 site_url: https://guardiandental.netlify.app
 

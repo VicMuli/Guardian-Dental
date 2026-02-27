@@ -7,20 +7,6 @@
     <title>Guardian Dental | Content Manager</title>
     <!-- Sveltia CMS: A faster, proxy-free drop-in replacement for Decap -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
-
-    <!-- Prevent Vercel Toolbar/Analytics scripts from crashing Sveltia CMS when it replaces the DOM -->
-    <script>
-        const originalAppendChild = Node.prototype.appendChild;
-        Node.prototype.appendChild = function (child) {
-            try { return originalAppendChild.call(this, child); }
-            catch (e) { console.warn('Caught appendChild error (likely Vercel injected script):', e); return child; }
-        };
-        const originalInsertBefore = Node.prototype.insertBefore;
-        Node.prototype.insertBefore = function (newNode, referenceNode) {
-            try { return originalInsertBefore.call(this, newNode, referenceNode); }
-            catch (e) { console.warn('Caught insertBefore error:', e); return newNode; }
-        };
-    </script>
 </head>
 
 <body>

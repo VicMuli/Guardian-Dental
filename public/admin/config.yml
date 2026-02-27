@@ -5,15 +5,11 @@ backend:
   auth_type: pkce
   app_id: Ov23li7WDVUp7IQ4w7tB
 
-site_url: https://guardian-dental.vercel.app
+site_url: https://guardiandental.netlify.app
 
 # Media files will be stored in /public/uploads
 media_folder: "public/uploads"
 public_folder: "/uploads"
-
-# TODO: Set this to your deployed site URL after publishing to Netlify
-# Example: site_url: https://your-site-name.netlify.app
-# site_url: https://your-site-name.netlify.app
 
 # Editor workflow (optional: enables draft/review/ready states)
 # publish_mode: editorial_workflow

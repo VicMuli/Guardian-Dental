@@ -7,10 +7,12 @@
     <title>Guardian Dental | Content Manager</title>
     <!-- Sveltia CMS: A faster, proxy-free drop-in replacement for Decap -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
-    <script type="module" src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.mjs"></script>
 </head>
 
 <body>
+    <!-- Container for CMS to mount into, prevents Vercel Toolbar injected script from crashing when CMS replaces body -->
+    <div id="nc-root"></div>
+    <script type="module" src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.mjs"></script>
 </body>
 
 </html>

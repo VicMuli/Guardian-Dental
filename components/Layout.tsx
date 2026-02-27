@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, ShieldPlus } from 'lucide-react';
 import clsx from 'clsx';
 import WhatsAppButton from './WhatsAppButton';
+import GuardianChat from './GuardianChat';
 
 const navItems = [
   { label: 'About', href: '/about' },
@@ -189,6 +190,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* WhatsApp Floating Button */}
       {/* WhatsApp Floating Button */}
       <WhatsAppButton />
+      <GuardianChat />
     </div>
   );
 };
